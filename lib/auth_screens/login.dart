@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:recipe_app/widgets/bottom_navigation_bar.dart';
 import 'package:recipe_app/widgets/circle_button.dart';
 import 'package:recipe_app/widgets/custom_button.dart';
 import 'package:recipe_app/widgets/custom_text_field.dart';
@@ -113,6 +114,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin
                            ),
                            PasswordTextField(
                              node:passwordNode ,
+                             hint: 'Password',
                              textValueController: passwordTextController ,
                              onValidate: (value) {
                                if (value.isEmpty || value.length < 7) {
@@ -156,7 +158,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin
                                    width: screenWidth*0.4,
                                    text: 'Login',
                                    onPressed: (){
-
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomNaviBar()));
                                    }
                                ),
 

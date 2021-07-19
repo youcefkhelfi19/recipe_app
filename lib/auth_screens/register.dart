@@ -30,7 +30,7 @@ class _RegisterState extends State<Register> with TickerProviderStateMixin
   @override
   void initState() {
     _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 20));
+        AnimationController(vsync: this, duration: Duration(seconds: 40));
     _animation =
     CurvedAnimation(parent: _animationController, curve: Curves.linear)
       ..addListener(() {

@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:recipe_app/global_servvices/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
    CustomButton({this.width,this.height,this.onPressed,this.text});
@@ -12,7 +13,7 @@ class CustomButton extends StatelessWidget {
     return MaterialButton(
          height: height,
         minWidth: width,
-        color: Color(0xff4A1C40),
+        color: AppColors.purple2,
 
       onPressed: onPressed,
       child:  AutoSizeText(text,
