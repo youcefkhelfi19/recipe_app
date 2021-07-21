@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:recipe_app/global_servvices/app_colors.dart';
+import 'package:recipe_app/screens/add.dart';
 import 'package:recipe_app/screens/favorit.dart';
 import 'package:recipe_app/screens/home.dart';
 
@@ -17,7 +18,7 @@ class _BottomNaviBarState extends State<BottomNaviBar> {
  int currentTabIndex = 0;
  @override
   void initState() {
-    tabs = [Home(),Favorite()];
+    tabs = [Home(),Favorite(),Add()];
 
     super.initState();
   }
@@ -29,6 +30,7 @@ class _BottomNaviBarState extends State<BottomNaviBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       extendBody: true ,
       body:tabs[currentTabIndex],
       bottomNavigationBar: BottomAppBar(
@@ -49,7 +51,11 @@ class _BottomNaviBarState extends State<BottomNaviBar> {
               label: 'Book',
             ),
 
-
+            BottomNavigationBarItem(
+              icon:Icon(null),
+              activeIcon: null,
+              label: "",
+            ),
             BottomNavigationBarItem(
               icon:Icon(FontAwesome.bookmark),
               label: 'Saved',
@@ -63,7 +69,9 @@ class _BottomNaviBarState extends State<BottomNaviBar> {
         backgroundColor: AppColors.purple2,
         child: Icon(FontAwesome.plus,),
         onPressed:(){
-
+          setState(() {
+            currentTabIndex = 2;
+          });
        },
       ),
     );

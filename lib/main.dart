@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primaryColor: AppColors.purple2,
           scaffoldBackgroundColor: Colors.white,
           popupMenuTheme: PopupMenuThemeData(
             textStyle: TextStyle(color: Colors.white),
