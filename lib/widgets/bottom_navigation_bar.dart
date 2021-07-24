@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:recipe_app/global_servvices/app_colors.dart';
+import 'package:recipe_app/global_services/app_colors.dart';
 import 'package:recipe_app/screens/add.dart';
 import 'package:recipe_app/screens/favorit.dart';
 import 'package:recipe_app/screens/home.dart';

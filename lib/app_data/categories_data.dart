@@ -1,4 +1,4 @@
-class Data {
+class CategoriesData {
   List categories = [
     {
       'name': 'Plats',

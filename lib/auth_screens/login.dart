@@ -85,7 +85,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin
                      ),
                    ),
                    Container(
-                     padding: EdgeInsets.symmetric(vertical: 30.0,horizontal: 10.0),
+                     padding: EdgeInsets.symmetric(vertical: 05.0,horizontal: 10.0),
                     margin: EdgeInsets.all(20.0),
                      height:screenHeight*0.35,
                      width: screenWidth,
@@ -133,7 +133,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin
                                child: AutoSizeText('Forget password ?',
                                  style: TextStyle(
                                      color: Colors.black54,
-                                     fontSize: 18.0
+                                     fontSize: 16.0
                                  ),
                                ),
                              ),

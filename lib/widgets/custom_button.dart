@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:recipe_app/global_servvices/app_colors.dart';
+import 'package:recipe_app/global_services/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
    CustomButton({this.width,this.height,this.onPressed,this.text});

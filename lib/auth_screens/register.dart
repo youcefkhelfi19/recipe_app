@@ -87,7 +87,7 @@ class _RegisterState extends State<Register> with TickerProviderStateMixin
                   ),
                    SizedBox(height: screenHeight*0.1,),
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 30.0,horizontal: 10.0),
+                    padding: EdgeInsets.symmetric(vertical: 5.0,horizontal: 10.0),
                     margin: EdgeInsets.all(20.0),
                     height:screenHeight*0.5,
                     width: screenWidth,

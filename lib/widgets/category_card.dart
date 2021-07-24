@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:recipe_app/global_servvices/app_colors.dart';
+import 'package:recipe_app/global_services/app_colors.dart';
 
 class CategoryCard extends StatelessWidget {
    CategoryCard({this.name,this.image});
@@ -11,12 +11,11 @@ class CategoryCard extends StatelessWidget {
     final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 5.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           CircleAvatar(
-              radius: screenWidth * 0.1,
+              radius: screenWidth * 0.08,
               backgroundColor: AppColors.purple2,
               child: Container(
                 padding: EdgeInsets.all(15),
@@ -32,12 +31,15 @@ class CategoryCard extends StatelessWidget {
                       end: const FractionalOffset(1.0, 0.0),
                       stops: [0.25, 0.5, 0.75, 1.0],
                       tileMode: TileMode.clamp),
-                  borderRadius: BorderRadius.circular(50.0),
+                  borderRadius: BorderRadius.circular(100.0),
                 ),
                 child: Image(
                   image: AssetImage(image),
                 ),
               )),
+          SizedBox(
+            height:2,
+          ),
           AutoSizeText(
             name,
             style: TextStyle(fontSize: 12),

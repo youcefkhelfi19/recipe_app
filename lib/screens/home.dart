@@ -3,13 +3,16 @@ import 'package:backdrop/backdrop.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:recipe_app/global_servvices/app_colors.dart';
-import 'package:recipe_app/global_servvices/data.dart';
+import 'package:recipe_app/app_data/feeds_data.dart';
+import 'package:recipe_app/global_services/app_colors.dart';
+import 'package:recipe_app/app_data/categories_data.dart';
 import 'package:recipe_app/screens/profile.dart';
 import 'package:recipe_app/widgets/category_card.dart';
+import 'package:recipe_app/widgets/feeds_card.dart';
 
 class Home extends StatelessWidget {
- final List categories = Data().categories;
+ final List categories = CategoriesData().categories;
+ final List  feed = FeedsData().feeds;
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
@@ -39,20 +42,16 @@ class Home extends StatelessWidget {
              children: [
                Container(
 
-                 margin: EdgeInsets.only(top: 10 ,left: 10.0,bottom: 10),
+                 margin: EdgeInsets.only(top: 10 ,left:10,bottom: 10),
                  padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
                  decoration: BoxDecoration(
                    gradient: LinearGradient(
                      colors: [
                        Colors.black12,
                        Colors.black26,
-
-
                      ],
-
                    ),
                    borderRadius: BorderRadius.only(
-                    // bottomRight: Radius.circular(30.0),
                      bottomLeft: Radius.circular(40.0),
                        topLeft: Radius.circular(40.0)
 
@@ -79,7 +78,7 @@ class Home extends StatelessWidget {
                  ),
                ),
                Padding(
-                 padding: const EdgeInsets.only(left: 20.0),
+                 padding: const EdgeInsets.only(left: 10.0,bottom: 5.0),
                  child: Align(
                      alignment: Alignment.bottomLeft,
                      child: AutoSizeText('Categories',
@@ -90,10 +89,9 @@ class Home extends StatelessWidget {
                      )),
                ),
                Container(
-
-                 padding: EdgeInsets.only(left: 10),
+                 padding: EdgeInsets.only(left: 10,right: 10.0),
                  width: screenWidth,
-                 height: screenHeight*0.13,
+                 height: screenHeight*0.12,
                  child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                      itemCount: categories.length,
@@ -104,10 +102,32 @@ class Home extends StatelessWidget {
                        );
                      }),
                ),
+               Padding(
+                 padding: const EdgeInsets.only(left: 10.0),
+                 child: Align(
+                     alignment: Alignment.bottomLeft,
+                     child: AutoSizeText('Feeds',
+                       style: TextStyle(
+                         fontSize: 18.0,
+                         fontWeight: FontWeight.bold,
+                       ),
+                     )),
+               ),
                Expanded(
-                 flex: 8,
                  child: Container(
-                   color: Colors.white,
+                     padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 5.0),
+                     child: ListView.builder(
+                      itemCount:feed.length ,
+                     itemBuilder: (context , index){
+                        return FeedsCard(
+                          title: feed[index]['title'],
+                          description: feed[index]['description'],
+                          image: feed[index]['image'],
+                          isFavorite: feed[index]['favorite'],
+                          isSaved: feed[index]['saved'],
+                        );
+                     })
+
                  ),
                )
              ],
